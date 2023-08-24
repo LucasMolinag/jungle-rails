@@ -1,0 +1,13 @@
+<!-- app/views/orders/_line_item.html.erb -->
+
+<div class="line-item">
+  <%= image_tag item.product.image_url, class: "img-thumbnail" %>
+  <table>
+    <tr>
+      <td><%= item.product.name %></td>
+      <td><%= item.product.description %></td>
+      <td><%= line_item.quantity %></td>
+    </tr>
+  </table>
+  <p>Total: <%= number_to_currency(item.total_price) %></p>
+</div>
