@@ -1,6 +1,8 @@
 class CartsController < ApplicationController
 
   def show
+    @enhanced_cart = cart
+    
   end
 
   def add_item
