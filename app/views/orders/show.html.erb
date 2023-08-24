@@ -13,15 +13,15 @@
       </tr>
     </thead>
     <tbody>
-    <% @order.line_items.each do |product| %>
-      <%= render 'product', product: :product, quantity: :quantity.to_i %>
+    <% @order.line_items.each do |item| %>
+      <%= render 'line_item', product: item.product, quantity: item.quantity.to_i %>
     <% end %>
   </tbody>
   </table>
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
-    <p>Total Amount: <%= number_to_currency(@order.total_amount) %></p>
+    <p>Total Amount: <%= number_to_currency(@order.total_cents/100) %></p>
     <p>Email: <%= @order.email %></p>
   </div>
 
